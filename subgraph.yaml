@@ -1,0 +1,26 @@
+specVersion: 0.0.3
+description: Alpaca Finance is the largest lending protocol allowing leveraged yield farming on Binance Smart Chain. It helps lenders to earn safe and stable yields, and offers borrowers undercollateralized loans for leveraged yield farming positions, vastly multiplying their farming principals and resulting profits.‌ Furthermore, Alpacas are a virtuous breed. That’s why, we are a fair-launch project with no pre-sale, no investor, and no pre-mine. This is a product built by the Alpacas, for the Alpacas.
+repository: https://github.com/ProjectGalaxyHQ/ibalpaca-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ibALPACA
+    network: bsc
+    source:
+      address: '0xf1be8ecc990cbcb90e166b71e368299f0116d421'
+      abi: ibALPACA
+      startBlock: 6865780
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./src/mappings/ibalpaca.ts
+      entities:
+        - User
+      abis:
+        - name: ibALPACA
+          file: ./abis/ibALPACA.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer

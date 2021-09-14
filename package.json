@@ -1,0 +1,26 @@
+{
+  "name": "ibalpaca-subgraph",
+  "version": "1.0.0",
+  "repository": "https://github.com/NFTGalaxy/ibAlpaca-subgraph",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "codegen": "graph codegen --output-dir src/types/",
+    "build": "graph build",
+    "create-local": "graph create nftgalaxy/alpaca-ibalpaca-subgraph --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy nftgalaxy/alpaca-ibalpaca-subgraph --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "remove-local": "graph remove nftgalaxy/alpaca-ibalpaca-subgraph --node http://127.0.0.1:8020",
+    "deploy": "graph deploy --product hosted-service NFTGalaxy/alpaca-ibalpaca-subgraph"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "^0.20.0",
+    "@graphprotocol/graph-ts": "^0.20.0",
+    "@typescript-eslint/eslint-plugin": "^4.0.0",
+    "@typescript-eslint/parser": "^4.0.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.1.0",
+    "node-forge": "^0.10.0",
+    "prettier": "^2.0.0",
+    "typescript": "^4.0.0",
+    "yargs-parser": "^18.1.2"
+  }
+}
