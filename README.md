@@ -21,7 +21,7 @@ Query:
 {
   user(id: "0x005557a4d27714a764eed9afb2b2e86ac35d6f00") {
     id
-    mintCount
+    tx
   }
 }
 ```
@@ -31,8 +31,8 @@ Sample response data:
 {
   "data": {
     "user": {
-      "id": "0x005557a4d27714a764eed9afb2b2e86ac35d6f00",
-      "mintCount": 10
+      "id": "0x00064a106d0596817a9f697f7c5cce32e8286d55",
+      "tx": "0xa66005ffc522ef59ad95f745623948ab6cd82a959a2282c719b60242b9a8c291"
     }
   }
 }
@@ -44,10 +44,7 @@ function(data) {
   if (data.user == null) {
     return 0
   }
-  if (data.user.mintCount > 0) {
-    return 1
-  }
-  return 0
+  return 1
   
 }
 ```
