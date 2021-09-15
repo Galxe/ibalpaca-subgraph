@@ -10,7 +10,7 @@ dataSources:
     source:
       address: '0xf1be8ecc990cbcb90e166b71e368299f0116d421'
       abi: ibALPACA
-      startBlock: 6865780
+      startBlock: 10905873
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.4
